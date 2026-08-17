@@ -1,0 +1,1420 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================================
+   LOGIN PAGE
+========================================== */
+
+.login-page {
+  min-height: 100vh;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(100, 70, 255, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(0, 190, 255, 0.08),
+      transparent 30%
+    ),
+    #070912;
+
+  color: white;
+}
+
+
+/* ==========================================
+   BACKGROUND GRID
+========================================== */
+
+.background-grid {
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+
+  pointer-events: none;
+}
+
+
+/* ==========================================
+   ORBS
+========================================== */
+
+.orb {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(80px);
+
+  pointer-events: none;
+}
+
+.orb-one {
+  width: 300px;
+  height: 300px;
+
+  background: rgba(90, 70, 255, 0.12);
+
+  top: -120px;
+  right: 10%;
+}
+
+.orb-two {
+  width: 250px;
+  height: 250px;
+
+  background: rgba(0, 180, 255, 0.08);
+
+  bottom: -100px;
+  left: 10%;
+}
+
+.orb-three {
+  width: 180px;
+  height: 180px;
+
+  background: rgba(150, 70, 255, 0.08);
+
+  top: 50%;
+  right: 30%;
+}
+
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar {
+  position: relative;
+
+  z-index: 10;
+
+  height: 80px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* LOGO */
+
+.logo {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+
+.logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067ff,
+      #4d43d8
+    );
+
+  box-shadow:
+    0 8px 25px rgba(90, 70, 255, 0.35);
+}
+
+
+/* STATUS */
+
+.navbar-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color: rgba(255,255,255,0.55);
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #6dffb1;
+
+  box-shadow:
+    0 0 10px rgba(109,255,177,0.8);
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+  position: relative;
+
+  z-index: 5;
+
+  min-height: calc(100vh - 150px);
+
+  padding: 30px 7% 60px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  align-items: center;
+
+  gap: 50px;
+}
+
+
+/* ==========================================
+   HERO LEFT
+========================================== */
+
+.hero-left {
+  max-width: 620px;
+}
+
+
+.eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 25px;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+
+  color: #a69cff;
+}
+
+.eyebrow-line {
+  width: 35px;
+  height: 1px;
+
+  background: #8172ff;
+}
+
+
+.hero-left h1 {
+  margin: 0;
+
+  font-size: clamp(48px, 6vw, 78px);
+
+  line-height: 1.03;
+
+  letter-spacing: -3px;
+
+  font-weight: 800;
+}
+
+.hero-left h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      #8875ff,
+      #5bd5ff
+    );
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+.hero-description {
+  max-width: 550px;
+
+  margin: 28px 0;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.58);
+}
+
+
+/* ==========================================
+   LOGIN BUTTON
+========================================== */
+
+.nexora-login-button {
+  width: 220px !important;
+
+  height: 58px !important;
+
+  border-radius: 14px !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067ff,
+      #5547dc
+    ) !important;
+
+  color: white !important;
+
+  font-weight: 700 !important;
+
+  letter-spacing: 1px !important;
+
+  display: flex !important;
+
+  justify-content: space-between !important;
+
+  padding: 0 20px !important;
+
+  box-shadow:
+    0 15px 35px rgba(89,70,255,0.3) !important;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+.nexora-login-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 20px 45px rgba(89,70,255,0.45) !important;
+}
+
+
+.button-arrow {
+  font-size: 20px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.nexora-login-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+
+/* ==========================================
+   LOGIN NOTE
+========================================== */
+
+.login-note {
+  margin-top: 14px;
+
+  font-size: 11px;
+
+  color: rgba(255,255,255,0.4);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+
+/* ==========================================
+   MINI FEATURES
+========================================== */
+
+.mini-features {
+  display: flex;
+
+  gap: 50px;
+
+  margin-top: 45px;
+}
+
+.mini-features div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.mini-features strong {
+  font-size: 20px;
+}
+
+.mini-features span {
+  font-size: 10px;
+
+  color: rgba(255,255,255,0.4);
+
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   HERO RIGHT
+========================================== */
+
+.hero-right {
+  position: relative;
+
+  min-height: 560px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ==========================================
+   DASHBOARD CARD
+========================================== */
+
+.dashboard-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: min(440px, 90%);
+
+  padding: 28px;
+
+  border-radius: 25px;
+
+  background:
+    rgba(18, 21, 34, 0.82);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.4);
+}
+
+
+/* HEADER */
+
+.dashboard-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+}
+
+.small-label {
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+  color: rgba(255,255,255,0.35);
+}
+
+.dashboard-header h3 {
+  margin: 6px 0 0;
+
+  font-size: 22px;
+}
+
+
+/* LIVE */
+
+.live-badge {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 9px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(100,255,170,0.08);
+
+  color: #75ffb4;
+
+  font-size: 9px;
+}
+
+.live-badge span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #75ffb4;
+}
+
+
+/* ==========================================
+   PERFORMANCE
+========================================== */
+
+.performance {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin: 30px 0;
+}
+
+.score-circle {
+  width: 125px;
+  height: 125px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    conic-gradient(
+      #8171ff 84%,
+      rgba(255,255,255,0.06) 0
+    );
+
+  position: relative;
+}
+
+.score-circle::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 8px;
+
+  border-radius: 50%;
+
+  background: #121522;
+}
+
+.score-circle div {
+  position: relative;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.score-circle strong {
+  font-size: 36px;
+}
+
+.score-circle small {
+  font-size: 8px;
+
+  color: rgba(255,255,255,0.4);
+
+  letter-spacing: 1px;
+}
+
+
+/* PERFORMANCE TEXT */
+
+.performance-text {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.performance-text span {
+  color: rgba(255,255,255,0.55);
+
+  font-size: 12px;
+}
+
+.performance-text strong {
+  color: #73ffb3;
+
+  font-size: 25px;
+}
+
+.performance-text small {
+  color: rgba(255,255,255,0.3);
+
+  font-size: 9px;
+}
+
+
+/* ==========================================
+   ACTIVITY
+========================================== */
+
+.activity-section {
+  margin-top: 25px;
+}
+
+.activity-title {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 10px;
+
+  color: rgba(255,255,255,0.4);
+}
+
+.bars {
+  height: 110px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  margin-top: 15px;
+}
+
+.bar {
+  width: 22px;
+
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.bar span {
+  width: 100%;
+
+  border-radius: 8px 8px 3px 3px;
+
+  background:
+    linear-gradient(
+      to top,
+      #5145c8,
+      #8776ff
+    );
+}
+
+.day-one span {
+  height: 40%;
+}
+
+.day-two span {
+  height: 65%;
+}
+
+.day-three span {
+  height: 45%;
+}
+
+.day-four span {
+  height: 80%;
+}
+
+.day-five span {
+  height: 55%;
+}
+
+.day-six span {
+  height: 90%;
+}
+
+.day-seven span {
+  height: 30%;
+}
+
+.bar small {
+  font-size: 8px;
+
+  color: rgba(255,255,255,0.3);
+}
+
+
+/* ==========================================
+   DASHBOARD STATS
+========================================== */
+
+.dashboard-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin-top: 30px;
+
+  padding-top: 22px;
+
+  border-top:
+    1px solid rgba(255,255,255,0.07);
+}
+
+.dashboard-stats div {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.dashboard-stats span {
+  font-size: 8px;
+
+  color: rgba(255,255,255,0.3);
+
+  letter-spacing: 1px;
+}
+
+.dashboard-stats strong {
+  font-size: 18px;
+}
+
+.dashboard-stats small {
+  font-size: 8px;
+
+  color: rgba(255,255,255,0.3);
+}
+
+
+/* ==========================================
+   NEXORA AI BUTTON
+========================================== */
+
+.ai-card {
+  position: absolute;
+
+  right: -25px;
+
+  bottom: 55px;
+
+  width: 275px;
+
+  min-height: 78px;
+
+  padding: 13px 15px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border:
+    1px solid rgba(130,110,255,0.3);
+
+  border-radius: 18px;
+
+  background:
+    rgba(14,17,30,0.92);
+
+  backdrop-filter: blur(20px);
+
+  color: white;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  font-family: inherit;
+
+  box-shadow:
+    0 18px 45px rgba(0,0,0,0.4),
+    0 0 35px rgba(100,80,255,0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  z-index: 20;
+}
+
+
+/* Glow */
+
+.ai-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  left: -25px;
+  top: -35px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(110,90,255,0.16);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+}
+
+
+/* HOVER */
+
+.ai-card:hover {
+  transform:
+    translateY(-6px)
+    scale(1.02);
+
+  border-color:
+    rgba(130,110,255,0.7);
+
+  background:
+    rgba(22,25,43,0.98);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.5),
+    0 0 40px rgba(100,80,255,0.18);
+}
+
+
+/* ICON */
+
+.ai-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  font-size: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067ff,
+      #5045d8
+    );
+
+  box-shadow:
+    0 8px 25px rgba(100,80,255,0.4);
+
+  transition:
+    transform 0.3s ease;
+}
+
+.ai-card:hover .ai-icon {
+  transform:
+    rotate(10deg)
+    scale(1.08);
+}
+
+
+/* CONTENT */
+
+.ai-content {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+  flex: 1;
+}
+
+.ai-title {
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: #a99cff;
+}
+
+.ai-subtitle {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: white;
+}
+
+
+/* ARROW */
+
+.ai-arrow {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.07);
+
+  font-size: 18px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.ai-card:hover .ai-arrow {
+  transform:
+    translateX(5px);
+
+  background:
+    rgba(124,92,255,0.3);
+}
+
+
+/* ==========================================
+   VISUAL CIRCLE
+========================================== */
+
+.visual-circle {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(120,100,255,0.1);
+
+  z-index: 1;
+}
+
+.circle-inner {
+  position: absolute;
+
+  inset: 50px;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(120,100,255,0.07);
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+  position: relative;
+
+  z-index: 10;
+
+  height: 70px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(255,255,255,0.05);
+
+  color:
+    rgba(255,255,255,0.3);
+
+  font-size: 10px;
+
+  letter-spacing: 1px;
+}
+
+
+/* ==========================================
+   AI MODAL OVERLAY
+========================================== */
+
+.ai-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 20px;
+
+  background:
+    rgba(0,0,0,0.72);
+
+  backdrop-filter: blur(10px);
+}
+
+
+/* ==========================================
+   AI MODAL
+========================================== */
+
+.ai-modal {
+  position: relative;
+
+  width: min(600px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151827,
+      #0d101b
+    );
+
+  border:
+    1px solid rgba(130,110,255,0.25);
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,0.65);
+}
+
+
+/* ==========================================
+   MODAL HEADER
+========================================== */
+
+.ai-modal-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
+}
+
+.modal-ai-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067ff,
+      #5045d8
+    );
+
+  font-size: 23px;
+}
+
+.ai-modal-header span {
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  color: #a99cff;
+
+  font-weight: 800;
+}
+
+.ai-modal-header h2 {
+  margin: 5px 0 0;
+
+  font-size: 20px;
+}
+
+
+/* CLOSE */
+
+.close-ai {
+  margin-left: auto;
+
+  width: 35px;
+  height: 35px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255,255,255,0.06);
+
+  color: white;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease;
+}
+
+.close-ai:hover {
+  background:
+    rgba(255,255,255,0.12);
+}
+
+
+/* ==========================================
+   AI INPUT
+========================================== */
+
+.ai-input-section {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.ai-input-section label {
+  font-size: 12px;
+
+  color:
+    rgba(255,255,255,0.5);
+}
+
+.ai-input-section textarea {
+  width: 100%;
+
+  resize: vertical;
+
+  padding: 16px;
+
+  border-radius: 14px;
+
+  border:
+    1px solid rgba(255,255,255,0.1);
+
+  outline: none;
+
+  background:
+    rgba(255,255,255,0.04);
+
+  color: white;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  transition:
+    border-color 0.2s ease;
+}
+
+.ai-input-section textarea:focus {
+  border-color:
+    rgba(130,110,255,0.7);
+}
+
+.ai-input-section textarea::placeholder {
+  color:
+    rgba(255,255,255,0.25);
+}
+
+
+/* ==========================================
+   ASK AI BUTTON
+========================================== */
+
+.ask-ai-button {
+  width: 100%;
+
+  height: 52px;
+
+  margin-top: 18px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #8067ff,
+      #5045d8
+    );
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 12px 30px rgba(90,70,255,0.25);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.ask-ai-button span {
+  margin-left: 10px;
+
+  font-size: 17px;
+}
+
+.ask-ai-button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 18px 40px rgba(90,70,255,0.4);
+}
+
+.ask-ai-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* ==========================================
+   AI RESPONSE
+========================================== */
+
+.ai-response {
+  margin-top: 22px;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  background:
+    rgba(120,100,255,0.07);
+
+  border:
+    1px solid rgba(120,100,255,0.16);
+}
+
+.response-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+
+  color: #a99cff;
+}
+
+.response-header span {
+  font-size: 18px;
+}
+
+.response-header strong {
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.ai-response p {
+  margin: 0;
+
+  color:
+    rgba(255,255,255,0.72);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+
+  white-space: pre-wrap;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 950px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+
+    padding-top: 50px;
+  }
+
+  .hero-left {
+    max-width: 700px;
+  }
+
+  .hero-right {
+    min-height: 500px;
+  }
+
+  .ai-card {
+    right: 5%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .navbar-status {
+    display: none;
+  }
+
+  .hero {
+    padding:
+      30px 20px
+      50px;
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .mini-features {
+    gap: 25px;
+  }
+
+  .hero-right {
+    min-height: 430px;
+  }
+
+  .dashboard-card {
+    width: 100%;
+
+    padding: 20px;
+  }
+
+  .ai-card {
+    width: 240px;
+
+    right: 0;
+
+    bottom: 15px;
+  }
+
+  .visual-circle {
+    width: 350px;
+    height: 350px;
+  }
+
+  .footer {
+    padding: 0 20px;
+
+    gap: 10px;
+  }
+
+  .footer span:last-child {
+    display: none;
+  }
+
+  .ai-modal {
+    padding: 22px;
+  }
+
+}

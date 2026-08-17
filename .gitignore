@@ -1,0 +1,29 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Maven
+target/
+**/target/
+
+# Java logs / crash files
+*.log
+hs_err_pid*
+replay_pid*
+
+# Frontend
+fitness-frontend/node_modules/
+fitness-frontend/dist/
+
+# Environment / secrets
+.env
+.env.*
+
+# Temporary files
+findstr
+java
+where
+
+# OS
+.DS_Store
+Thumbs.db
