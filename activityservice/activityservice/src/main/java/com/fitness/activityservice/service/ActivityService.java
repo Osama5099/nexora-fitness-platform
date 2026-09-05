@@ -6,9 +6,8 @@ import com.fitness.activityservice.dto.ActivityResponse;
 import com.fitness.activityservice.model.Activity;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,11 +18,8 @@ import java.util.stream.Collectors;
 public class ActivityService {
 
     private final ActivityRepository activityRepository;
-
     private final UserValidationService userValidationService;
-    private final KafkaTemplate<String,Activity> kafkaTemplate;
-    @Value("${kafka.topic.name}")
-    private String topicName;
+    private final WebClient aiServiceWebClient;
 
     public ActivityResponse trackActivity(ActivityRequest request) {
         log.info("Received activity request for userId: {}", request.getUserId());
@@ -42,8 +38,14 @@ public class ActivityService {
                 .build();
 
         Activity savedActivity=activityRepository.save(activity);
+
         try{
-            kafkaTemplate.send(topicName, savedActivity.getUserId(), savedActivity);
+            aiServiceWebClient.post()
+                    .uri("/api/recommendations/process")
+                    .bodyValue(savedActivity)
+                    .retrieve()
+                    .bodyToMono(Void.class)
+                    .subscribe();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -53,7 +55,6 @@ public class ActivityService {
     private ActivityResponse mapToReponse(Activity activity) {
         ActivityResponse response=new ActivityResponse();
         response.setId(activity.getId());
-
         response.setUserId(activity.getUserId());
         response.setType(activity.getType());
         response.setDuration(activity.getDuration());
@@ -70,6 +71,5 @@ public class ActivityService {
         return activityList.stream()
                 .map(this::mapToReponse)
                 .collect(Collectors.toList());
-
     }
 }

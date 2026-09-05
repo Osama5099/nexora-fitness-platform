@@ -1,30 +1,16 @@
 spring:
   data:
     mongodb:
-      uri: mongodb://localhost:27017/aiactivityfitness
+      uri: ${MONGODB_URI}
       database: aiactivityfitness
-
-  kafka:
-    bootstrap-servers: localhost:9092
-    producer:
-      key-serializer: org.apache.kafka.common.serialization.StringSerializer
-      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
-
-kafka:
-  topic:
-    name: activity-events
-
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka/}
   instance:
-    hostname: localhost
-    prefer-ip-address: true
-
+    hostname: ${RENDER_EXTERNAL_HOSTNAME:localhost}
+    prefer-ip-address: false
 
 server:
-  port: 8082
+  port: ${PORT:8082}
