@@ -1,15 +1,9 @@
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8761/eureka}
 
 spring:
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          jwk-set-uri: http://localhost:8181/realms/fitness-app/protocol/openid-connect/certs
-
   cloud:
     gateway:
       server:
@@ -31,4 +25,4 @@ spring:
                 - Path=/api/recommendations/**
 
 server:
-  port: 8080
+  port: ${PORT:8080}
